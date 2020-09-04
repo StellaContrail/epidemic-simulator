@@ -1,2 +1,4 @@
-# epidemic-simulator
-Simulate how virus outbreak occurs
+# Epidemic Simulator
+Simulates how virus outbreak occurs
+
+## Abstract
