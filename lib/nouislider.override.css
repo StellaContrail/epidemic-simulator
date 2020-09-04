@@ -1,0 +1,36 @@
+.noUi-connect {
+    background: #2ca9fc;
+}
+.noUi-handle {
+    border: 1px solid #D9D9D9;
+    border-radius: 3px;
+    background: #FFF;
+    cursor: pointer;
+    box-shadow: none;
+}
+.noUi-horizontal {
+    height: 10px;
+}
+.noUi-horizontal .noUi-handle {
+    width: 34px;
+    height: 20px;
+    right: -17px;
+    top: -6px;
+}
+.noUi-handle:before,
+.noUi-handle:after {
+    display: none;
+}
+.noUi-tooltip {
+    display: block;
+    position: absolute;
+    border: 1px solid #D9D9D9;
+    border-radius: 3px;
+    background: #fff;
+    color: #000;
+    padding-top: 3px;
+    height: 30px;
+    text-align: center;
+    white-space: nowrap;
+    opacity: 0.3;
+}
