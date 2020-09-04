@@ -20,6 +20,9 @@ Additionally, to see the effect of virus prevention methods, the following param
 
 Plus you can see how "densely populated spot" would effect the outbreak speed by tweaking the parameter.
 
+## Overview Snapshot
+![Overview](img/whole.png)
+
 ## Reference
 * The Washington Post  
 [" Why outbreaks like coronavirus spread exponentially, and how to “flatten the curve” "  ](https://www.washingtonpost.com/graphics/2020/world/corona-simulator/)
@@ -29,9 +32,6 @@ Plus you can see how "densely populated spot" would effect the outbreak speed by
 * Babel (ES2017 -> E5)
 * Bootstrap (v4.5)
 * [noUiSlider.js](https://github.com/leongersen/noUiSlider)
-
-## Overview Snapshot
-![Overview](img/whole.png)
 
 ## License
 MIT License
