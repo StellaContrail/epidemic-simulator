@@ -11,10 +11,11 @@
     <script src="lib/nouislider.min.js"></script>
 </head>
 <body>
-    <div class="container">
-        <div class="row justify-content-center">
-            <div id="title">
-                <h2 class="py-3" style="font-family: 'Source Sans Pro'; font-weight: lighter;">Epidemic Simulation</h2>
+    <div class="container pb-5">
+        <div class="row justify-content-center text-center">
+            <div id="title" class="py-3">
+                <h2 style="font-family: 'Source Sans Pro'; font-weight: lighter;">Epidemic Simulation</h2>
+                <a href="#description">See description</a>
             </div>
         </div>
         <div class="row justify-content-center py-2">
@@ -56,6 +57,187 @@
                     <label id="label_attract_probability">Attract probability</label> <div id="slider_attract_probability" class="slider"></div>
                 </div>
             </div>
+        </div>
+        <div id="description" class="row justify-content-center">
+            <h3 style="font-family: 'Source Sans Pro'; font-weight: lighter;">Description</h3>
+        </div>
+        <h4 style="text-decoration-line: underline;"># Disclaimer</h4>
+        <p>
+            I'm not an epidemiologist. 
+            Neither the simulation nor any content I've shown here isn't necessarily true.
+            For more detailed and correct information, I strongly suggest you listen to the experts and the medical center.
+        </p>
+        <h4># SIR model</h4>
+        <p>
+            The statistical behavior of a virus spread can be described using the SIR model.
+            <div class="row justify-content-start p-2 text-center font-italic" style="color: #777777;">
+                <div class="col-3">
+                    <img src="img/sir_mode.png" alt="SIR model" class="my-3">
+                    <br>
+                    (Fig.1) SIR model
+                </div>
+            </div>
+            where S, I, and R represent Susceptible, Infectious, and Removed respectively.
+        </p>
+        <p>
+            The definitions of these parameters are:
+            <table class="table table-sm">
+                <tbody>
+                    <tr>
+                        <td><span class="font-weight-bolder">S</span>usceptible</td>
+                        <td>People who are not yet infected. They are also not immune to the virus.</td>
+                    </tr>
+                    <tr>
+                        <td><span class="font-weight-bolder">I</span>nfectious</td>
+                        <td>People who have been infected. They can transmit the virus to the susceptible.</td>
+                    </tr>
+                    <tr>
+                        <td><span class="font-weight-bolder">R</span>emoved</td>
+                        <td>People who have been recovered or deceased from the virus. They don't transmit the virus.</td>
+                    </tr>
+                </tbody>
+            </table>
+            These definitions are the same as the ones used in the simulation.
+            Especially in the simulation, the susceptible people are colored in <span style="color: #7AD9FF;">■</span>, 
+            the infected in <span style="color: #E24040;">■</span> with a circle which indicates infectious radius, and 
+            the removed in <span style="color: #7F7F7F;">■</span>.
+        </p>
+        <h4># How Simulation Works</h4>
+        <p>
+            The <span class="font-weight-bolder">largest panel</span> (which might look like the following) shows the present situation of the community.
+            <div class="row justify-content-start pb-2 text-center font-italic" style="color: #777777;">
+                <div class="col-5">
+                    <img src="img/virus.png" alt="Simulation" class="my-3 border">
+                    <br>
+                    (Fig.2) Distribution of people, FPS, and the Central Spot.
+                </div>
+            </div>
+            Each point represents an individual. 
+            Again, the color shows the present status of the individual.
+            The more red the overview is, the more chaos the situation is.
+            The same goes with the blue, the more blue overview means the situation is well controlled.
+            <br>
+            The gray rectangle located at the center in the image is "central spot".
+            It's where people tend to gather such as supermarkets, public transportation, etc.
+        </p>
+        <p>
+            The <span class="font-weight-bolder">top panel</span> shows the changes in the number of Susceptible, Infectious, and Removed.
+            <div class="row justify-content-start p-2 text-center font-italic" style="color: #777777;">
+                <div class="col-6">
+                    <img src="img/plot.png" alt="Stats" class="my-3">
+                    <br>
+                    (Fig.3) Changes in the number of people in each status
+                </div>
+            </div>
+            The labels on the right-hand side are showing the present situation of the community.
+        </p>
+        <p>
+            The <span class="font-weight-bolder">sliders</span> can change the configuration of the simulation in real-time (except population).
+            <div class="row align-items-center justify-content-around">
+                <div class="col-5">
+                    <div class="row justify-content-start p-2 text-center font-italic" style="color: #777777;">
+                        <div class="col-12">
+                            <img src="img/control.png" alt="Control" class="my-3">
+                            <br>
+                            (Fig.4) Range Sliders for the parameters
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-7">
+                    <div class="row justify-content-start p-2 text-center font-italic" style="color: #777777;">
+                        <div class="col-12">
+                            
+                            <table class="table table-sm">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Label</th>
+                                        <th scope="col">Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Population</td>
+                                        <td>Number of people in a community including those who are quarantined</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Infectious radius</td>
+                                        <td>Effective infectious radius from the infected individual</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Infectious duration</td>
+                                        <td>Duration until people recovers from illness</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Infectious probability</td>
+                                        <td>Percent of being infected when encountered with an infected individual</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Social distance radius</td>
+                                        <td>Radius from which people avoid approaching when they're closer</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Social distance probability</td>
+                                        <td>Percent of all the people pay attention to social distancing</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Quarantine probability</td>
+                                        <td>Percent of the infected people get quarantined</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Attract probability</td>
+                                        <td>Percent of all the people gather at the populated spot</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            (Table.1) Descriptions of each slider
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </p>
+        <p>
+            The <span class="font-weight-bolder">buttons</span> enable you to control the simulation.
+            <div class="row justify-content-start p-2 text-center font-italic" style="color: #777777;">
+                <div class="col-3">
+                    <img src="img/buttons.png" alt="Buttons" class="my-1">
+                    <br>
+                    (Fig.5) Buttons
+                </div>
+            </div>
+            You can <span class="font-weight-bolder">Pause</span> when the simulation is running.
+            You can <span class="font-weight-bolder">Reset</span> the simulation at any time.
+            However, the <span class="font-weight-bolder">Play</span> button behaves differently depending on the state of the simulation.
+            <br>
+            The <span class="font-weight-bolder">Play</span> button behaves like:<br>
+            When the simulation is paused, the <span class="font-weight-bolder">Play</span> button will resume the simulation.
+            <br>
+            When the simulation is stopped, the <span class="font-weight-bolder">Play</span> button will reset and restart the simulation.
+        </p>
+
+        <h4># Reference</h4>
+        <ul class="pb-2">
+            <li class="font-italic font-weight-light">
+                Melting Asphalt <a href="https://www.meltingasphalt.com/interactive/outbreak/">"Outbreak"</a>
+            </li>
+            <li class="font-italic font-weight-light">
+                3Blue1Brown <a href="https://youtu.be/gxAaO2rsdIs">"Simulating an epidemic"</a>
+            </li>
+            <li class="font-italic font-weight-light">
+                The Washington Post <a href="https://www.washingtonpost.com/graphics/2020/world/corona-simulator/">"Why outbreaks like coronavirus spread exponentially, and how to “flatten the curve”"</a>
+            </li>
+        </ul>
+
+        <div class="text-center">
+            <a href="#title" style="text-decoration: underline;">Go back to top</a>
+            <hr>
+            <span class="font-weight-lighter" style="color: #aaaaaa;">
+                more simulations on <a href="https://stellacontrail.github.io/simulations/index.html">https://stellacontrail.github.io/simulations/</a>
+            </span>
+            <br>
+            <span class="font-weight-lighter" style="color: #aaaaaa;">
+                This simulation is licensed under the MIT License.
+            </span>
         </div>
     </div>
     <script src="lib/main.js"></script>
