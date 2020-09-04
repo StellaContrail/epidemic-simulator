@@ -1,0 +1,5 @@
+lib/node_modules/
+.babelrc
+babel.config.json
+tsconfig.json
+*.map
