@@ -3,3 +3,5 @@ lib/node_modules/
 babel.config.json
 tsconfig.json
 *.map
+.vscode
+.vs
